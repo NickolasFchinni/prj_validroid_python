@@ -20,6 +20,9 @@ jobs:
       - name: Simular build
         run: ./scripts/build_mobile.sh
 
+      - name: Configurar variável GEMINI_API_KEY
+        run: echo "GEMINI_API_KEY=${{ secrets.GEMINI_API_KEY }}" >> $GITHUB_ENV
+
       - name: Validar artefato
         run: python validator/validator.py
 

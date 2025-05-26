@@ -1,0 +1,28 @@
+# Arquivos Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Arquivos de ambiente virtual
+venv/
+env/
+
+# Configurações de editor/IDE
+.vscode/
+.idea/
+*.swp
+
+# Arquivos de sistema (ex: macOS, Windows)
+.DS_Store
+Thumbs.db
+
+# Arquivos sensíveis
+.env
+
+# Logs e relatórios
+build_log.txt
+gemini_output.txt
+build_report.txt
+
+# Resultados de execução temporária
+*.log

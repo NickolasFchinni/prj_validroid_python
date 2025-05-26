@@ -1,0 +1,33 @@
+name: CI Validroid+
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build-analyze:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Preparar ambiente
+        run: |
+          chmod +x scripts/*.sh
+          pip install -r requirements.txt
+
+      - name: Limpar cache anterior
+        run: ./scripts/clear_cache.sh
+
+      - name: Simular build
+        run: ./scripts/build_mobile.sh
+
+      - name: Validar artefato
+        run: python validator/validator.py
+
+      - name: Analisar logs com IA
+        run: python validator/log_analyzer.py
+
+      - name: Gerar relatório
+        run: python validator/report_generator.py
+
+      - name: Simular deploy
+        run: ./scripts/deployment_simulation.sh

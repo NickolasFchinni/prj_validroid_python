@@ -1,0 +1,2 @@
+[ERROR] Cannot resolve dependency: react-native-device-info
+[WARNING] Some deprecated APIs used
